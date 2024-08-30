@@ -1,22 +1,48 @@
 {%extends "layout.html"%}
 
 {%block content%}
-
-    <div class="d-flex">
-        <div class="col-6 bg-secondary text-white full-height d-flex align-items-center justify-content-center">
-            <!-- Left Side Content -->
-            <h1>Left Side</h1>
-            <a href="#"> rl environment image</a>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ipsum assumenda pariatur iusto sed, tempore tenetur nulla? Delectus officiis quis dolorem ipsum id, exercitationem, aperiam dolorum eaque nostrum nesciunt est.
-        </div>
-        <div class="col-6 bg-secondary text-white full-height d-flex align-items-center justify-content-center">
-            <!-- Right Side Content -->
-            <h1>Right Side</h1>
-            <a href="#"> rl environment image</a>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo nostrum corrupti hic voluptate ad alias obcaecati, quae perferendis veniam ut beatae, omnis, deserunt laborum sunt magnam ullam quas. Provident.
-            
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .full-height {
+            height: 100vh; /* Makes the divs full viewport height */
+        }
+        .divider {
+            width: 50px; /* Width of the divider */
+            background-color: #f4eded; /* Color of the divider */
+            height: 100vh; /* Full height */
+            position: absolute; /* Absolute positioning */
+            left: 50%; /* Center divider between columns */
+            transform: translateX(-50%);
+        }
+        .border-custom {
+        border: 10px solid #000000; /* Custom border width and color */
+    }
+    </style>
+</head>
+    <div class="container-fluid position-relative">
+        <div class="row no-gutters">
+            <div class="col-6 bg-secondary text-white full-height d-flex flex-column align-items-center justify-content-center">
+                <!-- Left Side Content -->
+                <h1>Left Side</h1>
+                <a href="#">rl environment image</a>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ipsum assumenda pariatur iusto sed, tempore tenetur nulla? Delectus officiis quis dolorem ipsum id, exercitationem, aperiam dolorum eaque nostrum nesciunt est.</p>
+            </div>
+            <!-- Divider is positioned absolutely within the container -->
+            <div class="divider"></div>
+            <div class="col-6 bg-secondary text-white full-height d-flex flex-column align-items-center justify-content-center">
+                <!-- Right Side Content -->
+                <h1>Right Side</h1>
+                <a href="#">rl environment image</a>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo nostrum corrupti hic voluptate ad alias obcaecati, quae perferendis veniam ut beatae, omnis, deserunt laborum sunt magnam ullam quas. Provident.</p>
+            </div>
         </div>
     </div>
 
+ 
 
 {%endblock%}
