@@ -1,27 +1,60 @@
-{%extends "layout.html"%}
+{% extends "layout.html" %}
 
-{%block content%}
- 
-
-    <div class="container-fluid position-relative">
-        <div class="row no-gutters">
-            <div class="col-6 bg-secondary text-white full-height d-flex flex-column align-items-center justify-content-center">
-                <!-- Left Side Content -->
-                <h1>Left Side</h1>
-                <a href="#">rl environment image</a>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ipsum assumenda pariatur iusto sed, tempore tenetur nulla? Delectus officiis quis dolorem ipsum id, exercitationem, aperiam dolorum eaque nostrum nesciunt est.</p>
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <!-- Video Section -->
+        <div class="col-md-8">
+            <!-- Placeholder text initially shown -->
+            <div id="videoContainer" class="embed-responsive embed-responsive-16by9">
+                <div id="placeholderText" class="d-flex align-items-center justify-content-center" style="height: 100%; background-color: #f0f0f0; color: #333; font-size: 1.5rem; text-align: center;">
+                    <p>Video will load here. Click "Play Simulation" to start.</p>
+                </div>
+                <iframe id="videoFrame" class="embed-responsive-item" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: none;"></iframe>
             </div>
-            <!-- Divider is positioned absolutely within the container -->
-            <div class="divider"></div>
-            <div class="col-6 bg-secondary text-white full-height d-flex flex-column align-items-center justify-content-center">
-                <!-- Right Side Content -->
-                <h1>Right Side</h1>
-                <a href="#">rl environment image</a>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo nostrum corrupti hic voluptate ad alias obcaecati, quae perferendis veniam ut beatae, omnis, deserunt laborum sunt magnam ullam quas. Provident.</p>
+            <br>
+            <div class="mt-3 d-flex justify-content-center">
+                <div class="btn-group" role="group" aria-label="Camera buttons">
+                    <button class="btn btn-primary" type="button" onclick="playVideo('DIvZxMtK220')">Play Simulation</button>
+                </div>
+            </div>
+            <br>
+            <p class="text-align"><b>Note: Annotated Videos are currently being stored on YouTube until we have enough resources to afford a streaming database.</b></p>
+        </div>
+
+        <!-- Card Section -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><h2>About Simulation</h2></h5><br>
+                    <p class="card-text">
+                        <h4>
+                        <ol>
+                            <li>Current simulation is based on current methodology of pre-timed signals.</li><br>
+                            <li>Designed RL solution uses a deterministic approach (need to shift probabilistic).</li><br>
+                            <li>Environment is not equipped to consider cars overtaking and multiple lanes formed from it (drawback).</li><br>
+                            <li>Environment input does not account flaws of current CV solution (delta in vehicle count coming from frames segmentation and FOV truncation).</li><br>
+                        </ol>
+                        </h4>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
- 
+<script>
+    function playVideo(videoId) {
+        const videoFrame = document.getElementById('videoFrame');
+        const placeholderText = document.getElementById('placeholderText');
+        
+        // Hide the placeholder text and show the video
+        placeholderText.style.display = 'none';
+        videoFrame.style.display = 'block';
+        
+        // Set the video source and autoplay
+        videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}`;
+    }
+</script>
 
-{%endblock%}
+{% endblock %}
