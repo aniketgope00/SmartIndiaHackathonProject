@@ -1,27 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <div class="container">
-    <div class="container-fluid">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe id="videoFrame" width="560" height="315" src="https://www.youtube.com/embed/q2G9AWeanqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="videoFrame" class="embed-responsive-item" src="https://www.youtube.com/embed/3qO3sxOtPMc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-
-    <div class="container mt-3">
-        <button class="btn btn-primary" type="button" onclick="changeVideo('https://www.youtube.com/embed/q2G9AWeanqY')">Camera 1</button>
-        <button class="btn btn-primary" type="button" onclick="changeVideo('https://www.youtube.com/embed/AVhnaEkakDM')">Camera 2</button>
-        <button class="btn btn-primary" type="button" onclick="changeVideo('https://www.youtube.com/embed/NfYb5WT2sEs')">Camera 3</button>
-        <button class="btn btn-primary" type="button" onclick="changeVideo('https://www.youtube.com/embed/V1_4nNm8a6w')">Camera 4</button>
-        <button class="btn btn-primary" type="button" onclick="changeVideo('https://www.youtube.com/embed/UrWHKeDx6rk')">Camera 5</button>
+    <br>
+    <div class="mt-3 d-flex justify-content-center">
+        <div class="btn-group" role="group" aria-label="Camera buttons">
+            <button class="btn btn-primary" type="button" onclick="changeVideo('3qO3sxOtPMc')">Camera 1</button>
+            <button class="btn btn-primary" type="button" onclick="changeVideo('LiLJd72JLi0')">Camera 2</button>
+            <button class="btn btn-primary" type="button" onclick="changeVideo('frsF4XjvW0k')">Camera 3</button>
+            <button class="btn btn-primary" type="button" onclick="changeVideo('HAX3y6femFQ')">Camera 4</button>
+            <button class="btn btn-primary" type="button" onclick="changeVideo('CZ6NoakNc8s')">Camera 5</button>
+        </div>
     </div>
 </div>
 
 <script>
-    function changeVideo(url) {
-        document.getElementById('videoFrame').src = url;
+    function changeVideo(videoId) {
+        const videoFrame = document.getElementById('videoFrame');
+        videoFrame.src = `https://www.youtube.com/embed/${videoId}`;
     }
 </script>
-
 {% endblock %}
