@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import pandas as pd
+from temp import load_data
 
 app = Flask(__name__,
             template_folder='templates',
@@ -12,8 +13,7 @@ def home():
 @app.route('/vision-env')
 def vision_env():
 
-    data = pd.read_csv("object_detection_data.csv")
-    data = data.values.tolist()
+    data = load_data()
 
     # Define YouTube video IDs
     youtube_ids = {
